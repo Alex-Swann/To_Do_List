@@ -2,14 +2,13 @@
   'use strict';
 })();
 
-var http = require('http');
+var http = require('http-server');
+
 var PORT=3000;
 
-function handleRequest(request, response){
-    response.end('It Works!! Path Hit: ' + request.url);
-}
+console.log(require.main.filename);
 
-var server = http.createServer(handleRequest);
+var server = http.createServer({ root: __dirname });
 
 server.listen(PORT, function(){
     console.log("Server listening on: http://localhost:%s", PORT);
