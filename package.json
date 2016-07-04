@@ -1,0 +1,22 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "To Do List for front end development",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex-Swann/To_Do_List.git"
+  },
+  "author": "Alex, Ross, Cresz, Toby M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alex-Swann/To_Do_List/issues"
+  },
+  "homepage": "https://github.com/Alex-Swann/To_Do_List#readme",
+  "dependencies": {
+    "zombie": "^4.2.1"
+  }
+}
