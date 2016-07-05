@@ -1,9 +1,8 @@
 // process.env.NODE_ENV = 'test';
-
-var Browser = require('zombie');
-var expect  = require("chai").expect;
-var request = require("request");
 var http = require("http");
+var Browser = require('zombie');
+var app = require('../../app.js');
+var expect  = require("chai").expect;
 
 require('../globalBefore');
 
