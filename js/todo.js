@@ -2,13 +2,40 @@
   'use strict';
 })();
 
-var todos = new Array();
 
-window.onload = init;
 
-function init() {
-    getTodoData();
+function List(){
+  this.list = [];
 }
+
+List.prototype = {
+
+  viewList: function(){
+    var ul = document.getElementById("todoList");
+      this.list.sort(function(a, b) {
+        return a.id - b.id;
+      });
+        for (var i = 0; i < this.list.length; i++) {
+            var todoItem = this.list[i];
+            var li = document.createElement("li");
+            li.innerHTML =
+                'Task No:  ' + todoItem.id +
+                "<br>" + "  Task:  " + todoItem.text +
+                "<br>" + "  Completed:  " + todoItem.completed;
+            ul.appendChild(li);
+    }
+  },
+
+  addItem: function(item){
+    this.list.push(item);
+    this.list.sort(function(a, b) {
+      return a.id - b.id;
+    });
+  },
+};
+
+var todos = [];
+var list = new List();
 
 function getTodoData() {
     var request = new XMLHttpRequest();
@@ -28,11 +55,11 @@ function getTodoData() {
 }
 
 function parseTodoItems(todoJSON) {
-    if (todoJSON == null || todoJSON.trim() == "") {
+    if (todoJSON === null || todoJSON.trim() === "") {
         return;
     }
     var todoArray = JSON.parse(todoJSON);
-    if (todoArray.length == 0) {
+    if (todoArray.length === 0) {
         console.log("Error: the to-do list array is empty!");
         return;
     }
@@ -43,14 +70,9 @@ function parseTodoItems(todoJSON) {
 }
 
 function addTodosToPage() {
-    var ul = document.getElementById("todoList");
     for (var i = 0; i < todos.length; i++) {
         var todoItem = todos[i];
-        var li = document.createElement("li");
-        li.innerHTML =
-            'Task No:  ' + todoItem.id
-            + "<br>" + "  Task:  " + todoItem.text
-            + "<br>" + "  Completed:  " + todoItem.completed;
-        ul.appendChild(li);
-    }
+        list.addItem(todoItem);
+      }
+      list.viewList();
 }

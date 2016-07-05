@@ -18,8 +18,8 @@
   "homepage": "https://github.com/Alex-Swann/To_Do_List#readme",
   "dependencies": {
     "http-server": "^0.9.0",
-    "httpdispatcher": "^1.0.0",
-    "node-http-server": "^5.1.0",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
     "zombie": "^4.2.1"
   }
 }
