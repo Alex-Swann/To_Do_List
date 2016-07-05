@@ -9,7 +9,6 @@ List.prototype = {
   addToList: function(element) {
     this.list.push(element);
   }
-
 };
 
 module.exports = List;
