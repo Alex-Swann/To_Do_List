@@ -1,3 +1,7 @@
+(function(){
+  'use strict';
+})();
+
 var http = require('http-server');
 var Browser = require('zombie');
 var expect = require('chai').expect;

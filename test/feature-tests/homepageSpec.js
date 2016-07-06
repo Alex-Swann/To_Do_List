@@ -1,3 +1,7 @@
+(function(){
+  'use strict';
+})();
+
 describe('User visits front page', function() {
 
   it('should be successful', function() {
@@ -12,7 +16,12 @@ describe('User visits front page', function() {
     browser
       .fill('#todo_text', 'Go to the bank')
       .pressButton('Add to list');
-    browser.assert.text('#todo_list:nth-child(1)', 'Go to the bank');
+    browser
+      .fill('#todo_text', 'Holiday')
+      .pressButton('Add to list');
+
+  
+    browser.assert.text('#todo_list:nth-child(2)', 'Holiday');
   });
 
 });

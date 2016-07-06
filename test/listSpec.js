@@ -1,3 +1,7 @@
+(function(){
+  'use strict';
+})();
+
 var List = require('../src/list').List;
 var expect = require('chai').expect;
 
@@ -8,8 +12,7 @@ describe('list', function() {
   });
 
   it('starts with an empty array', function() {
-    expect(list.viewList()).to.be.an('array');
-    expect(list.viewList()).to.be.empty;
+    expect(list.viewList()).to.eql([]);
   });
 
   it('can add an item to the array', function() {

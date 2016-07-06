@@ -1,3 +1,7 @@
+(function(){
+  'use strict';
+})();
+
 (function(exports) {
   function List() {
     this._list = [];
