@@ -4,7 +4,7 @@
   "description": "To Do List for front end development",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec --recursive -R nyan"
+    "test": "./node_modules/.bin/mocha --reporter spec --recursive"
   },
   "repository": {
     "type": "git",

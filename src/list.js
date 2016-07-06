@@ -1,14 +1,14 @@
-function List() {
-  this.list = [];
-}
-
-List.prototype = {
-  viewList: function() {
-    return this.list;
-  },
-  addToList: function(element) {
-    this.list.push(element);
+(function(exports) {
+  function List() {
+    this._list = [];
   }
-};
-
-module.exports = List;
+  List.prototype = {
+    viewList: function() {
+      return this._list;
+    },
+    addToList: function(element) {
+      this._list.push(element);
+    }
+  };
+  exports.List = List;
+})(this);

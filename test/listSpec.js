@@ -1,4 +1,4 @@
-var List = require('../src/list');
+var List = require('../src/list').List;
 var expect = require('chai').expect;
 
 describe('list', function() {
