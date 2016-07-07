@@ -4,21 +4,30 @@
 
 window.onload = function(){
   var list = new List();
-
+  var todoListUl = document.getElementById('todo_list');
+  var textField = document.getElementById('todo_text');
 
   document.getElementById('add_todo_form').addEventListener('submit', function(event) {
     event.preventDefault();
-    var todoText = document.getElementById('todo_text').value;
 
+    todoText = textField.value;
     list.addToList(todoText);
-    ul = document.getElementById('todo_list');
-    ul.innerHTML = '';
-    document.getElementById('todo_text').value = '';
-    for( var i = 0 ; i < list.viewList().length ; i++ ){
+
+    clearScreen();
+    showList(todoListUl, list.viewList());
+  });
+
+  function showList(ul, array) {
+    for( var i = 0 ; i < array.length ; i++ ){
       li = document.createElement('LI');
-      li.innerHTML = list.viewList()[i];
+      li.innerHTML = array[i];
       ul.appendChild(li);
     }
-  });
+  };
+
+  function clearScreen() {
+    textField.value = '';
+    todoListUl.innerHTML = '';
+  };
 
 };
