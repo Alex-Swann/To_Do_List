@@ -14,6 +14,9 @@
     },
     getStatus: function() {
       return this._completedStatus;
+    },
+    changeStatus: function(){
+      this._completedStatus = !this._completedStatus;
     }
   };
 

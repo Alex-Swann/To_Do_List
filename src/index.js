@@ -18,6 +18,15 @@ window.onload = function(){
     showList(todoListUl, list.viewList());
   });
 
+
+  // var array = document.getElementById('ul');
+  // for(var i; i < array.length; i++){
+  //   array.addEventListener('li', function(){
+  //     list.viewList()[i].changeStatus();
+  //   });
+
+
+
   function showList(ul, array) {
     for( var i = 0 ; i < array.length ; i++ ){
       li = document.createElement('LI');

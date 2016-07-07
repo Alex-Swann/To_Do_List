@@ -15,4 +15,9 @@ describe('TodoItem', function() {
     expect(todo.getStatus()).to.be.false; /* jshint ignore:line */
   });
 
+  it('can change completed status', function(){
+    todo.changeStatus();
+    expect(todo.getStatus()).to.be.true; /* jshint ignore:line */
+  });
+
 });
