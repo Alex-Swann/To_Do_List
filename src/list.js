@@ -10,8 +10,9 @@
     viewList: function() {
       return this._list;
     },
-    addToList: function(element) {
-      this._list.push(element);
+    addToList: function(task, func) { /* jshint ignore:line */
+      var obj = new func(task);
+      this._list.push(obj);
     }
   };
   exports.List = List;

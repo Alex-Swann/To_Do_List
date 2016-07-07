@@ -11,23 +11,24 @@ window.onload = function(){
     event.preventDefault();
 
     todoText = textField.value;
-    list.addToList(todoText);
+    list.addToList(todoText, TodoItem);
 
     clearScreen();
     showList(todoListUl, list.viewList());
+    console.log(list.viewList());
   });
 
   function showList(ul, array) {
     for( var i = 0 ; i < array.length ; i++ ){
       li = document.createElement('LI');
-      li.innerHTML = array[i];
+      li.innerHTML = array[i].getTask();
       ul.appendChild(li);
     }
-  };
+  }
 
   function clearScreen() {
     textField.value = '';
     todoListUl.innerHTML = '';
-  };
+  }
 
 };
