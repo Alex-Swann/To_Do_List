@@ -10,8 +10,8 @@
     viewList: function() {
       return this._list;
     },
-    addToList: function(task, func) { /* jshint ignore:line */
-      var obj = new func(task);
+    addToList: function(item, itemConstructor) { /* jshint ignore:line */
+      var obj = new itemConstructor(item);
       this._list.push(obj);
     }
   };

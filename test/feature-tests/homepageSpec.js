@@ -19,19 +19,10 @@ describe('User visits front page', function() {
     browser
       .fill('#todo_text', 'Holiday')
       .pressButton('Add to list');
-    browser.assert.text('#todo_list li:nth-child(1)', 'Go to the bank');
-    browser.assert.text('#todo_list li:nth-child(2)', 'Holiday');
+    browser.assert.text('#todo_list li:nth-child(1)', 'Go to the bank Not Completed');
+    browser.assert.text('#todo_list li:nth-child(2)', 'Holiday Not Completed');
   });
 
-  it('can add and display items on the list', function() {
-    browser
-      .fill('#todo_text', 'Dog')
-      .pressButton('Add to list');
-    browser
-      .fill('#todo_text', 'Cat')
-      .pressButton('Add to list');
-    browser.assert.text('#todo_list li:nth-child(1)', 'Dog');
-    browser.assert.text('#todo_list li:nth-child(2)', 'Cat');
-  });
+
 
 });

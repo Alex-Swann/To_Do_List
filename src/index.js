@@ -14,15 +14,18 @@ window.onload = function(){
     list.addToList(todoText, TodoItem);
 
     clearScreen();
+
     showList(todoListUl, list.viewList());
-    console.log(list.viewList());
   });
 
   function showList(ul, array) {
     for( var i = 0 ; i < array.length ; i++ ){
       li = document.createElement('LI');
-      li.innerHTML = array[i].getTask();
+      taskDescription = array[i].getTask();
+      completionStatus = array[i].getStatus() ? 'Completed' : 'Not Completed';
+      li.innerHTML = taskDescription + ' ' + completionStatus;
       ul.appendChild(li);
+
     }
   }
 
